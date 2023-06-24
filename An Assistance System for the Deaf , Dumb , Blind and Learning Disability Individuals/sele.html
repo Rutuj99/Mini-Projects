@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>choose one</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+        background-color: black;
+        color: aliceblue;
+        font-family: 'Open Sans';
+        font-size: 55px;
+        border-radius: 10px;
+    }
+    
+    body {
+        background-image: url('1426870.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .coint1 {
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        width: 150px;
+        font-size: 30px;
+        align-items: center;
+        font-weight: 900;
+        background-color: black;
+        color: aliceblue;
+        position: absolute;
+        border: 1px solid red;
+        top: 160px;
+        right: 500px;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        -webkit-animation-duration: 4s;
+        -webkit-animation-name: slidein;
+    }
+    
+    .coint2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        width: 150px;
+        font-size: 30px;
+        font-weight: 900;
+        background-color: black;
+        color: aliceblue;
+        position: absolute;
+        top: 160px;
+        right: 700px;
+        border: 1px solid orange;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px 10px 10px 10px;
+        -webkit-animation-duration: 4s;
+        -webkit-animation-name: slidein;
+    }
+    
+    @-webkit-keyframes slidein {
+        from {
+            margin-right: 500px;
+        }
+        to {
+            margin-left: auto;
+        }
+    }
+    
+    .coint1:hover,
+    .coint2:hover {
+        background-color: rgb(53, 53, 54);
+    }
+    
+    .coint1:active,
+    .coint2:active {
+        background-color: rgb(3, 4, 70);
+    }
+</style>
+
+<body>
+    <BR>
+    <h1><u>Practice In<u></h1>
+<div class="container">
+  <a href="#">
+<div class="coint1">Maths <BR>skills
+</div></a>
+<a href="#">
+<div class="coint2">Writing skills
+</div></a>
+</div>
+</body>
+</html>

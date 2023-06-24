@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<div class=" ui container ">  
+        
+      <style>
+      body {
+        background: linear-gradient(90deg, #0084bf, #0c8996 50%);
+      }
+      
+      .ui.header {
+        color: #fff;
+        margin-bottom: 0;
+      };
+      
+      .desc {
+        color: #ddd;
+        margin-bottom: 2em;   
+      }
+      
+      .container {
+        padding: 2em 0;
+      }
+      
+      .ui.card {
+        width: 100%;
+      }
+      
+      .content-result {
+        min-height: 330px;
+      }
+      
+      .result {
+        .placeholder{
+          padding-top: 100px;
+          font-size: 30px;
+          line-height: 1;
+          color: gray;
+          text-align: center;    
+          span {
+            font-size: 15px;
+          }    
+        }
+        
+        .status {
+          margin-top: 5px;
+        }
+        
+        progress {
+          width: 100%;
+        }
+        
+        .ui.message {
+          margin-top: 2rem;
+          pre {
+            white-space: pre-wrap;
+          }
+        }
+      }
+    </style>
+      
+      /**
+      * main proccess function
+      */
+      <script>
+      function proccess(file){
+        $(".result ").html(" ");
+        
+        //Preview Image
+        var src = (window.URL ? URL : webkitURL).createObjectURL(file);
+        $("#image ").attr("src ", src);
+        
+        //Proccess Image
+        Tesseract.recognize(file)
+        .progress(function(data){
+          console.log(data);
+          progress(data);
+        })
+        .then(function(data){
+          console.log(data);
+          result(data)
+        })
+        
+      }
+      
+      /**
+      * progress function
+      */
+      function progress(packet){
+        var r = $(".result ");
+        
+        if(r.length > 0 && r.find(".status ").last().html() == packet.status){
+          if('progress' in packet) {
+            r.find("progress ").last().val(packet.progress);
+          }
+          
+        } else {    
+          var tStatus = "<div class='status ten wide column'>" + packet.status +"</div>"; var tProgress = "
+    <div class='six wide column'>" + (typeof packet.progress == "undefined" ? "" : ("<progress value='" + packet.progress + "' max='1'>")) +"</div>";
+                                                                                                            
+          r.append(tStatus + tProgress);
+        }
+      }
+      
+      /**
+      * reporting function
+      */
+      function result(data){
+        var r = $(".result");
+        //r.html("");
+        r.append(
+          "<div class='sixteen wide column output'>success" +
+          "<div class='ui message'><pre>" + data.text +"</pre></div>" + 
+          "</div>"
+        );
+        
+      }, initial-scale=1.0">
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="ui header ">Image to Text</h1>
+        <div class="desc ">Extract all the text from a selected image using tesseract OCR engine.</div>
+        
+        <div class="ui grid stackable ">
+          <div class="row ">
+            
+            <div class="eight wide column ">
+              <div class="ui card ">
+                <div class="content ">
+                  <h2 class="header ">Input</h2>
+                </div>
+                <div class="content ">
+                  <img id="image " class="ui centered medium image " src="http://www.brainstormerbingo.com/Images/upload-empty.png "/>
+                </div>
+                <div class="content extra ">
+                  <input id="file " type="file " onchange="proccess(window.lastFile=this.files[0]) ">  
+                </div>
+              </div>
+            </div>
+              
+            <div class="eight wide column ">
+              <div class="ui card ">
+                <div class="content ">
+                  <h2 class="header ">Output</h2>
+                </div>
+                <div class="content content-result ">
+                  <div class='ui grid'>
+                    <div class='row result'>
+                      <div class="column placeholder ">
+                        No Output <br/>
+                        <span>Choose a file to start</span>    
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+                <div class="content extra ">
+                  <small>Powered by <a href="https://github.com/naptha/tesseract.js#tesseractjs ">Tesseract JS</a></small>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+       
+      </div>
+</body>
+</html>
