@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBOUNCING</title>
+    <style>
+      #display_box{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
+      }
+    </style>
+</head>
+<body>
+    <h1>MOVIES </h1>
+    <input type="text" placeholder="Search Movie " id="movie_search" oninput="debounce(call,3000)">
+    <div id="display_box"></div>
+</body>
+</html>
+
+<script>
+    async function call(){
+        console.log("_____________________________________x_________________________________")
+        var searchItem=document.getElementById("movie_search").value;
+        try{
+            let x=await fetch(`https://www.omdbapi.com/?&apikey=f60c0d90&s=${searchItem}`)
+            let y=await x.json().then(function(data){
+                console.log(data.Search);
+                 display(data.Search)
+            })
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+var id;
+
+function debounce(funk,delay){
+     console.log("executed")
+     if(id){
+        clearTimeout(id)
+     }
+     id=setTimeout(funk,delay)
+
+}
+    // function menu(){
+    //     call();
+    // }
+
+    function display(data){
+        document.getElementById("display_box").innerText="";
+        data.forEach(elem=>{
+             var divi=document.createElement("div");
+             var image=document.createElement("img");
+             image.src=elem.Poster;
+             var name=document.createElement("h3");
+             name.innerText=elem.Title;
+             var year=document.createElement("h4");
+             year.innerText=elem.Year;
+
+             divi.append(image,year,name);
+             document.getElementById("display_box").append(divi);
+
+
+        })
+    }
+</script>
