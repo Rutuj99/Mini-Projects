@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create Blod</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+     <b>Title:</b> <input type="text" id="title"/><br><br>
+     <!-- <input type="text" id="body" style="width: 200px;height: 200px;"/><br><br> -->
+     <b>Body: </b><textarea id="body" name="message" rows="8" style="max-width: 100%;"></textarea><br><br>
+      <b>Author:</b><input type="text" id="author"/>
+      <button id="back" OnClick="naviagetB1()">ADD</button>
+    </body>
+</html>
+<script>
+
+ async function naviagetB1(){
+    let body={
+       title:document.getElementById("title").value,
+       body:document.getElementById("body").value,
+       author:document.getElementById("author").value
+    }
+
+   var x=await fetch(`http://localhost:3000/blogs`,{
+     method:"POST",
+     headers:{
+       "Content-Type":"application/json"
+     },
+     body:JSON.stringify(body)
+   }).then(()=>{
+      location.href="index.html"
+   })
+
+}
+
+</script>
