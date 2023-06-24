@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space X</title>
+    <link rel="stylesheet " href="index.css" />
+    <style>
+      body {
+        margin: auto;
+      }
+      header {
+        margin-top: 2%;
+        position: fixed;
+        cursor: pointer;
+        width: 100%;
+        background-color: transparent;
+        color: #fff;
+        padding: 40px;
+      }
+
+      footer {
+        padding: 20px;
+        background-color: #000000;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-left: 10px;
+        padding-left: 300px;
+        padding-right: 300px;
+        font-family: Lucida Sans Unicode;
+        font-size: 12px;
+        font-weight: bolder;
+      }
+
+      footer p:first-child {
+        color: rgb(170, 172, 172);
+      }
+      #head {
+        margin-top: -40px;
+        display: grid;
+        grid-template-columns: 3.5% 70% 5%;
+        grid-column-gap: 10%;
+      }
+      #middle img {
+        width: 100%;
+        margin-bottom: -4px;
+      }
+
+      #content1 img {
+        width: 400px;
+        /* border: 3px solid red; */
+        margin-left: -80px;
+      }
+      #content2 {
+        margin-left: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        font-family: Lucida Sans Unicode;
+        font-weight: bolder;
+        font-size: 13px;
+        /* border: 3px solid red; */
+      }
+      #content3 {
+        display: flex;
+        margin-left: -100px;
+
+        justify-content: space-evenly;
+        font-family: Lucida Sans Unicode;
+        font-weight: bolder;
+        font-size: 13px;
+        /* border: 3px solid red; */
+      }
+
+      /* ______________________________underline hover_________________ */
+      #content2 > p {
+        display: inline-block;
+        position: relative;
+      }
+
+      #content2 > p:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      #content2 > p:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+      footer  p {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+      }
+
+      footer  p:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+       
+      }
+      footer  p:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* _________________________________________________________________--------_____________________ */
+
+      .shop {
+        display: inline-block;
+        position: relative;
+      }
+
+      .shop:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      .shop:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      #content3 i {
+        font-size: large;
+      }
+/* ___________________________________________________x_____________________________ */
+      .bottom-left {
+        position: absolute;
+        top: 400px;
+        left: 150px;
+        color: white;
+      }
+
+      .bottom-left p {
+        font-family: Verdana;
+        font-size: 20px;
+      }
+      .bottom-left h3 {
+        font-family: Verdana;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: -18px;
+        margin-bottom: 20px;
+      }
+
+      .bottom-left button {
+        font-family: Verdana;
+        margin-top: -10px;
+        width: 170px;
+        height: 50px;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+      }
+
+      /* .bottom-left button:hover{
+      
+        background-color: white;
+      
+      } */
+         /* ________________________________________x____________________________________________ */
+     
+         .bottom-left1 {
+        position: absolute;
+        top: 1040px;
+        left: 150px;
+        color: white;
+      }
+
+      .bottom-left1 p {
+        font-family: Verdana;
+        font-size: 20px;
+      }
+      .bottom-left1 h3 {
+        font-family: Verdana;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: -18px;
+        margin-bottom: 20px;
+       
+        margin-right: 30%;
+      }
+
+      .bottom-left1 button {
+        font-family: Verdana;
+        margin-top: -10px;
+        width: 170px;
+        height: 50px;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+      }
+
+
+
+
+      /* ________________________________________________________x______________________________________ */
+
+      .bottom-left2 {
+        position: absolute;
+        top: 1870px;
+        left: 150px;
+        color: white;
+      }
+
+      .bottom-left2 p {
+        font-family: Verdana;
+        font-size: 20px;
+      }
+      .bottom-left2 h3 {
+        font-family: Verdana;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: -18px;
+        margin-bottom: 20px;
+      }
+
+      .bottom-left2 button {
+        font-family: Verdana;
+        margin-top: -10px;
+        width: 170px;
+        height: 50px;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+      }
+
+         /* ________________________________________________________x______________________________________ */
+
+          /* ________________________________________________________x______________________________________ */
+
+      .bottom-left3 {
+        position: absolute;
+        top: 2440px;
+        left: 150px;
+        color: white;
+      }
+
+      .bottom-left3 p {
+        font-family: Verdana;
+        font-size: 20px;
+      }
+      .bottom-left3 h3 {
+        font-family: Verdana;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: -18px;
+        margin-bottom: 20px;
+        margin-right: 60%;
+      }
+
+      .bottom-left3 button {
+        font-family: Verdana;
+        margin-top: -10px;
+        width: 170px;
+        height: 50px;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+      }
+
+         /* ________________________________________________________bottom hover effect x______________________________________ */
+
+
+
+      .btn {	
+	--def:black;
+	--inv: rgb(255, 255, 255);
+	position: relative;	
+	color: var(--inv);
+	text-transform: uppercase;
+	transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+	cursor: pointer;
+	user-select: none;
+}
+
+.btn:before, .btn:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+}
+
+.btn:hover {
+	color: var(--def);
+	transition-delay: .2s;
+}
+
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: var(--inv);
+	transition-delay: .01s;
+}
+
+/* From Top */
+
+.from-top:before, 
+.from-top:after {
+	left: 0;
+	height: 0;
+	width: 100%;
+}
+
+.from-top:before {
+	bottom: 0;	
+	border: 1px solid var(--inv);
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.from-top:after {
+	top: 0;
+	height: 0;
+}
+
+.from-top:hover:before,
+.from-top:hover:after {
+	height: 100%;
+}
+/* __________________________________________x______________________________________ */
+    </style>
+  </head>
+  <body>
+    <header>
+   
+      <div id="head">
+        <div id="content1">
+          <img src="spacex-logo-1.svg" />
+        </div>
+
+        <div id="content2">
+          <p>FALCON 9</p>
+          <p>FALCON HEAVY</p>
+          <p>DROGAN</p>
+          <p>STARSHIP</p>
+          <p>HUMAN SPACEFLIGHTS</p>
+          <p>RIDESHARE</p>
+          <p>STARSHILDS</p>
+          <p>STARLINK</p>
+        </div>
+        <div id="content3">
+          <p class="shop">SHOP</p>
+
+          <div class="container">
+            <div class="icon">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <div class="box">
+              <nav>
+                <ul>
+                  <li><a href="#" id="gg">MISSION</a></li>
+
+                  <li><a href="#" id="gg">LAUNCHES</a></li>
+                  <li><a href="#" id="gg">CAREERS</a></li>
+                  <li><a href="#" id="gg">UPDATE</a></li>
+                  <li><a href="#" id="gg">MORE</a></li>
+               
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section1 id="middle">
+    
+
+      <img
+        src="https://sxcontent9668.azureedge.us/cms-assets/assets/Starlink_5_4_SLC_40_2023_02_12_DSC_8784_Website_63801effbb.jpg"
+        alt="Snow"
+        style="width: 100%"
+      />
+      <div class="bottom-left">
+        <div class="reveal">
+          <p>RECENT LAUNCH</p>
+          <h3>STARLINK MISSION</h3>
+          <button class="btn from-top">REWATCH</button>
+        </div>
+      </div>
+
+      <img
+        src="https://sxcontent9668.azureedge.us/cms-assets/assets/Amazonas_Nexus_SLC_40_2023_02_06_DSC_8717_Website_d4798964ea.jpg"
+      />
+      <div class="bottom-left1">
+        <div class="reveal">
+          <p>RECENT LAUNCH</p>
+          <h3>HISPASAT AMAZONAS NEXUS MISSION</h3>
+          <button class="btn from-top">REWATCH</button>
+        </div>
+      </div>
+
+      <img
+        src="https://sxcontent9668.azureedge.us/cms-assets/assets/S20_Chopstick_Stack_Desktop_0c016b49ec.webp"
+      />
+      <div class="bottom-left2">
+        <div class="reveal">
+          <!-- <p>RECENT LAUNCH</p> -->
+          <h3>STARSHIP UPDATES</h3>
+          <button class="btn from-top">LEARN MORE</button>
+        </div>
+      </div>
+
+      <img
+        src="https://sxcontent9668.azureedge.us/cms-assets/assets/Homepage_Desktop_5ebdeb0c6c.webp"
+      />
+      <div class="bottom-left3">
+        <div class="reveal">
+          <!-- <p>RECENT LAUNCH</p> -->
+          <h3>STARSHIP SELECTED BY NASA TO SUPPORT SUSTAINED LUNAR EXPLORATION</h3>
+         <a href="bottom-left.html" target="_blank"> <button class="btn from-top">LEARN MORE</button></a>
+        </div>
+      </div>
+
+    
+    </section1>
+    <footer>
+      <p>SPACEX © 2022</p>
+      <p>TWITTER</p>
+      <p>YOUTUBE</p>
+      <p>INSTAGRAM</p>
+      <p>FLICKR</p>
+      <p>LINKEDIN</p>
+      <p>PRIVACY POLICY</p>
+      <p>SUPPLIERS</p>
+    </footer>
+  </body>
+</html>
+
+<script
+  src="https://kit.fontawesome.com/d5e11ff79d.js"
+  crossorigin="anonymous"
+></script>
+
+<script src="index.js"></script>
