@@ -1,0 +1,57 @@
+body {
+    background-image: url('../Assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+
+
+#game-container {
+    text-align: center;
+    margin-top: 150px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #297fb8;
+}
+
+#game-instructions {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#instruction-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+}

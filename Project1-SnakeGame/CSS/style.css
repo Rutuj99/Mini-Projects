@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.body {
+    background: url("../Assets/bg.jpg");
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+#board {
+    background: rgb(17, 223, 210);
+    background: linear-gradient(90deg, rgba(17, 223, 210, 1) 0%, rgba(92, 127, 230, 0.742734593837535) 29%, rgba(232, 237, 113, 0.9920343137254902) 98%);
+    height: 90vh;
+    width: 90vh;
+    border: 5px solid rgb(0, 8, 5);
+    border-radius: 4px;
+    display: grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+
+}
+
+.snake-face{
+     background-color: rgb(19, 1, 1);
+     border: 2px solid rgb(255, 255, 255);
+     border-radius: 100% ;
+}
+
+.snake-body{
+     background-color: rgb(231, 37, 205);
+     border: 1px solid black;
+     border-radius: 10px;
+}
+
+.snake-body-1{
+    background-color: rgb(109, 221, 17);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.first-div{
+     margin-top: -500px;
+}
+
+#high-Id{
+    margin-top: -500px;
+}
+
+
+.food{
+     background-color: rgb(255, 255, 255);
+     border: 2px solid black;
+     border-radius: 10px;
+     animation: colorChange 5s infinite;
+}
+
+    @keyframes colorChange {
+      0% {
+        background-color: red;
+      }
+      25% {
+        background-color: blue;
+      }
+      50% {
+        background-color: green;
+      }
+      75% {
+        background-color: yellow;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+
+
+
+
+@media screen and (max-width: 580px) {
+    .body {
+      background-size: cover; 
+      justify-content: center;
+      align-items: center; 
+      flex-direction: column; 
+    }
+    
+    #player-name, #score-Id {
+      text-align: center; 
+    }
+  
+    #board {
+      max-width: 300px; 
+      max-height: 300px;
+    }
+
+    .snake-body{
+        background-color: rgb(231, 37, 205);
+        border: 1px solid black;
+        border-radius: 6px;
+   }
+   
+   .snake-body-1{
+       background-color: rgb(109, 221, 17);
+       border: 1px solid black;
+       border-radius: 6px;
+   }
+ 
+   #player-name{
+     font-size: 20px;
+    
+   }
+
+   #score-Id{
+     font-size: 20px;
+    
+   }
+
+   #high-Id{
+    position: relative;
+    top:500px;    
+    font-size: 20px;
+} 
+ 
+  }
